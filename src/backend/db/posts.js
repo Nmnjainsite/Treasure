@@ -1,6 +1,5 @@
 import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
-
 /**
  * Posts can be added here.
  * You can add default posts of your wish with different attributes
@@ -8,11 +7,12 @@ import { formatDate } from "../utils/authUtils";
 
 export const posts = [
   {
-    _id: uuid(),
+    _id: "dsf4sda6f65das4f",
+    img: "	https://img.freepik.com/free-vector/gradient-anime-girl-illustration_52683-83754.jpg?w=2000",
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "Hey,everyone it's been a while since I posted...Now i will be consistent.",
     likes: {
-      likeCount: 0,
+      likeCount: 8,
       likedBy: [],
       dislikedBy: [],
     },
@@ -24,6 +24,7 @@ export const posts = [
         _id: uuid(),
         username: "shubhamsoni",
         text: "Interesting",
+
         votes: {
           upvotedBy: [],
           downvotedBy: [],
@@ -42,15 +43,15 @@ export const posts = [
   },
   {
     _id: uuid(),
-    content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    img: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
+    content: "Attack On Titan Releasing Today !! Are you guys excited?",
     likes: {
-      likeCount: 0,
+      likeCount: 56,
       likedBy: [],
       dislikedBy: [],
     },
     username: "shubhamsoni",
-
+    createdAt: formatDate(),
     comments: [
       {
         _id: uuid(),
@@ -71,7 +72,40 @@ export const posts = [
         },
       },
     ],
-    createdAt: formatDate(),
+
     updatedAt: formatDate(),
+  },
+
+  {
+    _id: uuid(),
+    img: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
+    content: "Hey Guys Whatsup !",
+    likes: {
+      likeCount: 4999,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "Naman Jain",
+    createdAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        username: "namanjain",
+        text: "amazing",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        username: "rahulsharma",
+        text: "Great!",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
   },
 ];

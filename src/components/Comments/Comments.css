@@ -1,0 +1,15 @@
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 1rem;
+}
+
+.upvote-downvote {
+  padding: 0.5rem;
+}
+
+.comments-menu-skin {
+  display: flex;
+  justify-content: space-between;
+}

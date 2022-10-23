@@ -1,0 +1,63 @@
+.post-box {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  position: absolute;
+  top: 13%;
+  left: 27%;
+  z-index: -1;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.5rem;
+}
+.post-img {
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post-username {
+  position: relative;
+  top: -3.5rem;
+  left: 1rem;
+}
+
+.post-date {
+  float: right;
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.post-icons {
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.post-box-col-2 {
+  border: 1px solid #38bdf8;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 600px) {
+  .post-box {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 130%;
+    position: absolute;
+    left: 5%;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .post-box {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 130%;
+    position: absolute;
+    left: 5%;
+    z-index: -1;
+  }
+}

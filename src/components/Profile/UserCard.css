@@ -1,0 +1,151 @@
+.usercard-container {
+  position: absolute;
+  z-index: -1;
+  top: 4rem;
+  width: 100%;
+  text-align: center;
+  left: -1rem;
+}
+
+.usercard-cover-img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+.usercard-profile-img {
+  width: 25%;
+  border-radius: 50%;
+  padding: 0rem;
+  height: 6vw;
+}
+
+.usercard-typo {
+  display: flex;
+  list-style: none;
+  background-color: white;
+  width: 25%;
+  left: 12rem;
+  padding: 0.7rem;
+  margin-top: -5rem;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid lightgrey;
+}
+.usercard-typo-2 {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: grey;
+  line-height: 2rem;
+}
+.usercard-typo-col-3 {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+  left: 1rem;
+  position: relative;
+  padding: 0.3rem;
+  border-bottom: 1px solid lightgray;
+  font-size: 1.2rem;
+  left: 12rem;
+}
+.usercard-typo-follow {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+  left: 11.5rem;
+  position: relative;
+  padding: 0.3rem;
+  font-size: 1.2rem;
+}
+.usercard-typo-col-4 {
+  width: 25%;
+  font-size: 1rem;
+  position: relative;
+  left: 12rem;
+  padding: 0.5rem;
+  text-align: center;
+  color: grey;
+  border-bottom: 1px solid lightgrey;
+}
+.usercard-typo-col-5 {
+  width: 25%;
+  font-size: 1.1rem;
+  position: relative;
+  left: 12rem;
+  padding: 0.3rem;
+  text-align: left;
+  color: #262626;
+}
+.usercard-name {
+  font-size: 1.3rem;
+  color: black;
+}
+
+.post-tab {
+  width: 65%;
+  float: right;
+  position: relative;
+  top: -26rem;
+}
+
+.box-tabpanel {
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .usercard-container {
+    left: -1rem;
+  }
+  .usercard-cover-img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+  }
+  .usercard-profile-img {
+    width: 30%;
+    height: 13vw;
+  }
+  .usercard-typo {
+    width: 50%;
+    left: 1rem;
+  }
+  .usercard-typo-2 {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+  .usercard-name {
+    font-size: 1rem;
+  }
+  .usercard-typo-col-3 {
+    width: 50%;
+    font-size: 0.8rem;
+    left: 1rem;
+  }
+  .usercard-typo-follow {
+    width: 50%;
+    font-size: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .usercard-typo-col-4 {
+    width: 50%;
+    font-size: 0.7rem;
+    left: 1rem;
+  }
+  .usercard-typo-col-5 {
+    width: 50%;
+    font-size: 0.8rem;
+    left: 1rem;
+  }
+
+  .post-tab {
+    width: 90%;
+    float: left;
+    margin-left: 2rem;
+    position: relative;
+    top: 0rem;
+  }
+
+  .box-tabpanel {
+    width: 100%;
+  }
+}

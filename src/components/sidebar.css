@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Pacifico&family=Roboto&family=Roboto+Condensed&family=Style+Script&display=swap");
+
+.sidebar-box {
+  width: 25%;
+  position: absolute;
+  top: 5rem;
+  text-align: center;
+  z-index: -1;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.2rem;
+}
+
+.sidebar-img {
+  width: 90%;
+  border-radius: 0.5rem;
+}
+
+.sidebar-img:nth-child(2) {
+  width: 25%;
+  border-radius: 50%;
+  padding: 0rem;
+  height: 6vw;
+  margin-top: -2.5rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-box {
+    width: 100%;
+  }
+  .sidebar-img:nth-child(2) {
+    width: 25%;
+    border-radius: 50%;
+    padding: 0rem;
+    height: 23vw;
+    margin-top: -2.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar-box {
+    width: 100%;
+  }
+  .sidebar-img:nth-child(2) {
+    width: 25%;
+    border-radius: 50%;
+    padding: 0rem;
+    height: 23vw;
+    margin-top: -2.5rem;
+  }
+}

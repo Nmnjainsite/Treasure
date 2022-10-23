@@ -1,0 +1,86 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+export const signupHandler = createAsyncThunk(
+  "signupHandler/auth",
+  async ({ firstName, lastName, username, password }, thunkAPI) => {
+    try {
+      const response = await axios.post(`/api/auth/signup`, {
+        firstName,
+        lastName,
+        username,
+        password,
+      });
+      toast.success("Signup successfully");
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      toast.error("Account already");
+    }
+  }
+);
+
+export const loginHandler = createAsyncThunk(
+  "loginHandler/auth",
+  async ({ username, password }, thunkAPI) => {
+    try {
+      const response = await axios.post(`/api/auth/login`, {
+        username,
+        password,
+      });
+      toast.success("Login Successfully");
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        `Error Occurred in Login ${error.message}`,
+        toast.error("Credentials have not matched")
+      );
+    }
+  }
+);
+export const bookmarkPost = createAsyncThunk(
+  "user/bookmarkPost",
+
+  async ({ postId, token }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `/api/users/bookmark/${postId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      return response.data.bookmarks;
+    } catch (error) {
+      return rejectWithValue(`Error from bookmarkpost: ${error.message}`);
+    }
+  }
+);
+
+export const removeBookmarkPost = createAsyncThunk(
+  "/auth/removeBookmark",
+  async ({ postId, token }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `/api/users/remove-bookmark/${postId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      return response.data.bookmarks;
+    } catch (error) {
+      return rejectWithValue(`Error from removebookmarkpost: ${error.message}`);
+    }
+  }
+);
+
+export const getAllUser = createAsyncThunk(
+  "/user/getAllUser",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axios.get("/api/users");
+      return response.data.users;
+    } catch (error) {
+      return rejectWithValue(`Error from allUser: ${error.message}`);
+    }
+  }
+);
