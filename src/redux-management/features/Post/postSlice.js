@@ -18,6 +18,7 @@ const initialState = {
   allPost: [],
   userPost: [],
   status: false,
+  loading: false,
   trendingPost: [],
   getCommentForPost: [],
 };

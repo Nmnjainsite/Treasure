@@ -25,6 +25,20 @@ export const PostView = () => {
             <Sidebar />
           </div>
           <div className="post-container-col-2">
+            {/* {allPost.loading && (
+              <div>
+                <iframe
+                  src="https://giphy.com/embed/hL9q5k9dk9l0wGd4e0"
+                  width="480"
+                  height="318"
+                  frameBorder="0"
+                  class="giphy-embed"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )} */}
+            {/* {post.loading && <Spinner text="Getting Data.." />}
+      {!post.loading && post.error ? <div>Error: {post.error}</div> : null} */}
             <div className="post-box">
               {allPost.map((el) => (
                 <Feedbar post={el} key={el._id} />
