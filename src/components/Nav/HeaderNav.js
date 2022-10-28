@@ -1,25 +1,25 @@
 import React from "react";
-import {
-  IconButton,
-  Typography,
-  Toolbar,
-  Grid,
-  Menu,
-  MenuItem,
-  Divider,
-} from "@mui/material";
-import { Login, Logout, AccountCircleOutlined } from "@mui/icons-material";
+import { IconButton, Typography, Toolbar } from "@mui/material";
+import { Logout, AccountCircleOutlined } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux-management/features/User/userSlice";
+import { toast } from "react-toastify";
 const HeaderNav = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+    navigate("/");
+    toast.success("Logout Successfully");
+  };
   return (
     <>
       <Toolbar
         sx={{
-          position: "fixed",
+          // position: "fixed",
           display: "flex",
-          width: "100%",
+          // width: "100%",
           zindex: "1",
           bgcolor: "#38bdf8",
         }}
@@ -42,8 +42,9 @@ const HeaderNav = () => {
         <IconButton sx={{ color: "white" }}>
           <AccountCircleOutlined sx={{ fontSize: 35 }} />
         </IconButton>
-        <IconButton sx={{ color: "white", mr: 5 }}>
-          <Login sx={{ fontSize: 35 }} />
+
+        <IconButton sx={{ color: "white" }}>
+          <Logout sx={{ fontSize: 35 }} onClick={logoutHandler} />{" "}
         </IconButton>
       </Toolbar>
     </>

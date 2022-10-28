@@ -37,7 +37,6 @@ const PlainNav = () => {
           <AccountCircleOutlined sx={{ fontSize: 35 }} />
         </IconButton>
         <IconButton sx={{ color: "#38bdf8", mr: 5 }}>
-          {" "}
           <Login sx={{ fontSize: 35 }} />
         </IconButton>
       </Toolbar>

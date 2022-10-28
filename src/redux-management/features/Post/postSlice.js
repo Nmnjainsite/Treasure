@@ -10,6 +10,9 @@ import {
   deleteComment,
   upVoteComment,
   downVoteComment,
+  createPost,
+  editPost,
+  deletePost,
 } from "./postServices";
 const initialState = {
   allPost: [],
@@ -124,6 +127,36 @@ const postSlice = createSlice({
       state.allPost = action.payload;
     },
     [downVoteComment.rejected]: (state) => {
+      state.status = false;
+    },
+    [createPost.pending]: (state) => {
+      state.status = true;
+    },
+    [createPost.fulfilled]: (state, action) => {
+      state.status = false;
+      state.allPost = action.payload;
+    },
+    [createPost.rejected]: (state) => {
+      state.status = false;
+    },
+    [editPost.pending]: (state) => {
+      state.status = true;
+    },
+    [editPost.fulfilled]: (state, action) => {
+      state.status = false;
+      state.allPost = action.payload;
+    },
+    [editPost.rejected]: (state) => {
+      state.status = false;
+    },
+    [deletePost.pending]: (state) => {
+      state.status = true;
+    },
+    [deletePost.fulfilled]: (state, action) => {
+      state.status = false;
+      state.allPost = action.payload;
+    },
+    [deletePost.rejected]: (state) => {
       state.status = false;
     },
   },

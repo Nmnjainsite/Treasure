@@ -30,7 +30,7 @@ function EditProfile({ details, setDetails, user }) {
         sx={{
           fontSize: "1em",
           cursor: "pointer",
-          left: "5rem",
+          left: "4rem",
           position: "relative",
           top: "-3.6rem",
         }}

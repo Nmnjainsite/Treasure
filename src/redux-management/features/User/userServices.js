@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const signupHandler = createAsyncThunk(
   "signupHandler/auth",
-  async ({ firstName, lastName, username, password }, thunkAPI) => {
+  async ({ firstName, lastName, username, password }, { rejectWithValue }) => {
     try {
       const response = await axios.post(`/api/auth/signup`, {
         firstName,
@@ -16,7 +16,7 @@ export const signupHandler = createAsyncThunk(
       console.log(response);
       return response.data;
     } catch (error) {
-      toast.error("Account already");
+      return rejectWithValue(`Error from signup:${error.message}`);
     }
   }
 );
@@ -81,6 +81,38 @@ export const getAllUser = createAsyncThunk(
       return response.data.users;
     } catch (error) {
       return rejectWithValue(`Error from allUser: ${error.message}`);
+    }
+  }
+);
+
+export const followingUser = createAsyncThunk(
+  "/user/followUser",
+  async ({ followUserId, token }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `/api/users/follow/${followUserId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(`Error from following user: ${error.message}`);
+    }
+  }
+);
+
+export const unfollowingUser = createAsyncThunk(
+  "/user/unfollowUser",
+  async ({ followUserId, token }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `/api/users/unfollow/${followUserId}`,
+        {},
+        { headers: { authorization: token } }
+      );
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(`Error from unfollow user: ${error.message}`);
     }
   }
 );

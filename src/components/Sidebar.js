@@ -1,36 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sidebar.css";
 import cover from "../assets/cover.jpg";
 import Profile from "../assets/Profile.jpeg";
 import { TextField, Button } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-const Sidebar = () => {
-  const { foundUser } = useSelector((state) => state.user);
+import { createPost } from "../redux-management/features/Post/postServices";
+import { toast } from "react-toastify";
+
+const Sidebar = ({ user }) => {
+  const { foundUser, token } = useSelector((state) => state.user);
+
   const navigate = useNavigate();
+  const [postItem, setPostItem] = useState("");
+  const dispatch = useDispatch();
+
+  const createPostHandler = () => {
+    if (token) {
+      dispatch(createPost({ token, postData: postItem }));
+      toast.success("Created A New Post");
+    } else {
+      toast.warn("Let's Login Again");
+      navigate("/");
+    }
+  };
+
   return (
     <div className="sidebar-box">
-      <img src={cover} alt="" className="sidebar-img"></img>
-      <div>
-        <span>Follower</span>
+      <div className="img-container">
         <img
           src={Profile}
           alt=""
-          className="sidebar-img"
+          className="sidebar-img-2"
           onClick={() => navigate(`/user/${foundUser._id}`)}
         ></img>
-        <span>Following</span>
+        <span className="founduser-name">
+          {foundUser.firstName} {foundUser.lastName} | Web Developer
+          <p>
+            <span>
+              {foundUser.followers.length}{" "}
+              <span style={{ margin: "0.1rem" }}>Followers</span>
+            </span>
+
+            <span style={{ margin: "0.8rem" }}>
+              {foundUser.following.length} Followings
+            </span>
+          </p>
+        </span>
       </div>
-      <p>
-        {foundUser.firstName} {foundUser.lastName} | Web Developer
-      </p>
       <p>Lorem ipsum dolor sit amet, consectetur</p>
-
       <div>
-        <TextField label="Thoughts" autoFocus sx={{ width: "70%" }} />
+        <TextField
+          label="Create Post"
+          autoFocus
+          sx={{ width: "70%" }}
+          onChange={(e) => setPostItem(e.target.value)}
+        />
       </div>
 
-      <Button sx={{ width: "70%", mt: 2 }} variant="contained">
+      <Button
+        sx={{ width: "30%", mt: 2 }}
+        variant="contained"
+        onClick={createPostHandler}
+      >
         Post
       </Button>
     </div>

@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 import {
   signupHandler,
   loginHandler,
   bookmarkPost,
   removeBookmarkPost,
   getAllUser,
+  followingUser,
+  unfollowingUser,
 } from "./userServices";
 
 const initialState = {
@@ -21,6 +22,11 @@ const userSlice = createSlice({
   reducers: {
     setFoundUser: (state, action) => {
       state.foundUser = action.payload;
+    },
+    logout: (state) => {
+      state.foundUser = null;
+      state.token = null;
+      localStorage.removeItem("token");
     },
   },
   extraReducers: {
@@ -75,8 +81,37 @@ const userSlice = createSlice({
     [getAllUser.rejected]: (state) => {
       state.loading = false;
     },
+    [followingUser.pending]: (state) => {
+      state.loading = true;
+    },
+    [followingUser.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.foundUser = action.payload.user;
+      const newFoundUser = state.allUser.filter(
+        (el) => el._id !== action.payload.followUser._id
+      );
+      state.allUser = [...newFoundUser, action.payload.followUser];
+    },
+    [followingUser.rejected]: (state) => {
+      state.loading = false;
+    },
+    [unfollowingUser.pending]: (state) => {
+      state.loading = true;
+    },
+    [unfollowingUser.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.foundUser = action.payload.user;
+      const newFoundUser = state.allUser.filter(
+        (el) => el._id !== action.payload.followUser._id
+      );
+      state.allUser = [...newFoundUser, action.payload.followUser];
+    },
+
+    [unfollowingUser.rejected]: (state) => {
+      state.loading = false;
+    },
   },
 });
 
 export default userSlice.reducer;
-// export const { setFoundUser } = authSlice.actions;
+export const { logout } = userSlice.actions;

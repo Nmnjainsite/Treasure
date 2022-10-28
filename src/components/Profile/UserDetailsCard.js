@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import HeaderNav from "../Nav/HeaderNav";
 import "./UserCard.css";
-import { Edit, EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
-
+import { EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
+import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
-import { BookmarkPost } from "./Bookmarkpost";
-import { NavLink } from "react-router-dom";
 import EditProfile from "../EditProfile";
 import Profile from "../../assets/Profile.jpeg";
+import { ProfileTabs } from "./ProfileTabs";
 const UserDetailsCard = ({ userId }) => {
   const [details, setDetails] = useState({
     profession: "Web Developer",
@@ -52,6 +51,7 @@ const UserDetailsCard = ({ userId }) => {
                 {user.firstName} {user.lastName}
               </li>
               {userId === foundUser._id && <li>{details.profession}</li>}
+
               <li>
                 {user.bio}
                 {userId === foundUser._id && (
@@ -65,14 +65,21 @@ const UserDetailsCard = ({ userId }) => {
             </div>
           </div>
           <div className="usercard-typo-follow">
-            <span>0 </span>
-            <span>0 </span>
-            <span>0 </span>
+            {userId === foundUser._id && (
+              <span>{foundUser.following.length}</span>
+            )}
+            <span>
+              {userId !== foundUser._id && (
+                <span> {user.following.length}</span>
+              )}
+            </span>
+            <span>{userPost.length}</span>
+            <span>{user.followers.length}</span>
           </div>
           <div className="usercard-typo-col-3">
-            <span>Follow </span>
+            <span>Followings</span>
             <span> Posts </span>
-            <span>Unfollow </span>
+            <span>Followers</span>
           </div>
           <p className="usercard-typo-col-4">
             <span
@@ -87,7 +94,6 @@ const UserDetailsCard = ({ userId }) => {
 
             {userId !== foundUser._id && (
               <span>
-                {" "}
                 I am a software developer who is well versed with
                 JavaScript/ES6+,ReactJS & Redux and an intermediate in UI/UX
                 concepts. I can build web apps also eager to learn new
@@ -106,15 +112,18 @@ const UserDetailsCard = ({ userId }) => {
             >
               Contact me
             </span>
-            <EmailOutlined />{" "}
+            <EmailOutlined />
             {userId !== foundUser._id && <span>9893663203</span>}
             {userId === foundUser._id && <span>{details.contact}</span>}
             <span style={{ display: "block", marginLeft: "1rem" }}> </span>
             <PhoneAndroidOutlined /> {user.username}
           </p>
         </ul>
-        <div className="post-tab"></div>
+        <div className="post-tab">
+          <ProfileTabs user={user} />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

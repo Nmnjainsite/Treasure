@@ -6,6 +6,7 @@ import Sidebar from "../../components/Sidebar";
 import "./Post.css";
 import Feedbar from "../Feedbar";
 import Users from "../../components/Profile/Users";
+import Footer from "../../components/Footer/Footer";
 
 export const PostView = () => {
   const dispatch = useDispatch();
@@ -19,15 +20,24 @@ export const PostView = () => {
     <>
       <div>
         <HeaderNav />
-        <Sidebar />
+        <div className="post-container">
+          <div>
+            <Sidebar />
+          </div>
+          <div className="post-container-col-2">
+            <div className="post-box">
+              {allPost.map((el) => (
+                <Feedbar post={el} key={el._id} />
+              ))}
+            </div>
 
-        <div className="post-box">
-          {allPost.map((el) => (
-            <Feedbar post={el} key={el._id} />
-          ))}
+            <div>
+              <Users />
+            </div>
+          </div>
         </div>
+        <Footer />
       </div>
-      <Users />
     </>
   );
 };

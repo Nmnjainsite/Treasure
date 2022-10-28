@@ -58,19 +58,23 @@ const CommentCard = ({
     <div className="comments-container">
       <div>
         <li className="comments-menu-skin">
-          <span>{comment.username}</span>
-          <span
-            style={{
-              fontSize: "1rem",
-              margin: "1%",
-              color: "grey",
-              fontWeight: "bold",
-              WebkitFlexBasis: "0",
-            }}
-          >
-            {comment.text}
+          <span>
+            {comment.username}{" "}
+            <span
+              style={{
+                fontSize: "1.1rem",
+                color: "grey",
+                fontWeight: "bold",
+                margin: "1%",
+                padding: "0.3rem",
+                textAlign: "right",
+              }}
+            >
+              {comment.text}
+            </span>
           </span>
-          <span style={{ WebkitFlexBasis: "1" }}>
+
+          <span>
             {loginUserComment && (
               <LongMenu
                 comment={comment}

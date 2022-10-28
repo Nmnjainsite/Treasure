@@ -7,6 +7,7 @@ import Signup from "./pages/Auth/signup";
 import PostView from "./pages/Post/Post";
 import UserDetails from "./components/Profile/UserDetails";
 import MockAPI from "./components/Mockman";
+import Error404 from "./pages/Error404";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" element={<PostView />} />
         <Route path="/user/:userId" element={<UserDetails />} />
         <Route path="/mockman" element={<MockAPI />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       <ToastContainer
         position="top-center"

@@ -19,16 +19,19 @@ import {
 } from "../redux-management/features/User/userServices";
 import { useNavigate } from "react-router-dom";
 import Comment from "../components/Comments/comments";
+import Profile from "../assets/Profile.jpeg";
+import EditPost from "./Post/EditPost";
 const Feedbar = ({ post }) => {
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
   const dispatch = useDispatch();
   const { foundUser, token } = useSelector((state) => state.user);
   const likeUser = post.likes.likedBy.some((el) => el._id === foundUser._id);
   const bookmarkArray = foundUser.bookmarks;
-
+  const loginUserPost = post.username === foundUser.username;
   const findBookmarkPost = () => {
     if (bookmarkArray) {
       const bookmarkedPost = bookmarkArray.some((el) => el._id === post._id);
@@ -77,10 +80,20 @@ const Feedbar = ({ post }) => {
     <>
       <div>
         <div className="post-box-col-2">
-          <img src={post.img} alt="" className="post-img"></img>
+          {!loginUserPost && (
+            <img src={post.img} alt="" className="post-img"></img>
+          )}
+          {loginUserPost && (
+            <img src={Profile} alt="" className="post-img"></img>
+          )}
+
           <span className="post-username">{post.username}</span>
+          <span className="post-edit-icon">
+            {loginUserPost && <EditPost post={post} />}
+          </span>
           <span className="post-date">{finalDate}</span>
           <p style={{ fontSize: "1.2rem", color: "grey" }}>{post.content}</p>
+
           <div>
             <span className="post-icons">
               {likeUser ? (

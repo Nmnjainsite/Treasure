@@ -44,7 +44,7 @@ const Comment = ({ post }) => {
   return (
     <div>
       <TextField
-        sx={{ width: "70%" }}
+        sx={{ width: "80%" }}
         id="standard-basic"
         label="Drop a comment"
         variant="standard"
@@ -52,11 +52,15 @@ const Comment = ({ post }) => {
         onChange={(e) => setCommentText(e.target.value)}
       />
       {editCommentText ? (
-        <Button onClick={editCommentToPost} sx={{ width: "30%" }}>
+        <Button
+          onClick={editCommentToPost}
+          sx={{ width: "20%" }}
+          variant="contained"
+        >
           Save
         </Button>
       ) : (
-        <Button sx={{ width: "30%" }} onClick={postComment}>
+        <Button sx={{ width: "20%" }} onClick={postComment} variant="contained">
           Add
         </Button>
       )}
