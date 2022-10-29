@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import cover from "../assets/cover.jpg";
 import Profile from "../assets/Profile.jpeg";
@@ -7,24 +7,31 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createPost } from "../redux-management/features/Post/postServices";
 import { toast } from "react-toastify";
-
+import { IconButton } from "@mui/material";
+import { PhotoCamera } from "@mui/icons-material";
 const Sidebar = ({ user }) => {
   const { foundUser, token } = useSelector((state) => state.user);
-
+  const { allPost } = useSelector((state) => state.post);
   const navigate = useNavigate();
-  const [postItem, setPostItem] = useState("");
+  const [content, setContent] = useState("");
+  const [pic, setPic] = useState("");
   const dispatch = useDispatch();
 
   const createPostHandler = () => {
     if (token) {
-      dispatch(createPost({ token, postData: postItem }));
+      dispatch(createPost({ token, postData: { content, pic } }));
       toast.success("Created A New Post");
+      setPic("");
+      setContent("");
     } else {
       toast.warn("Let's Login Again");
       navigate("/");
     }
   };
 
+  const handleImage = (e) => {
+    setPic(URL.createObjectURL(e.target.files[0]));
+  };
   return (
     <div className="sidebar-box">
       <div className="img-container">
@@ -54,12 +61,20 @@ const Sidebar = ({ user }) => {
           label="Create Post"
           autoFocus
           sx={{ width: "70%" }}
-          onChange={(e) => setPostItem(e.target.value)}
+          onChange={(e) => setContent(e.target.value)}
         />
-      </div>
-
+      </div>{" "}
+      <IconButton
+        color="primary"
+        aria-label="upload picture"
+        component="label"
+        sx={{ mr: "35%", mt: 2 }}
+      >
+        <input hidden accept="image/*" type="file" onChange={handleImage} />
+        <PhotoCamera />
+      </IconButton>
       <Button
-        sx={{ width: "30%", mt: 2 }}
+        sx={{ width: "20%", mt: 2 }}
         variant="contained"
         onClick={createPostHandler}
       >

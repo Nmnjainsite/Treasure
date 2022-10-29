@@ -22,7 +22,7 @@ export const PostView = () => {
         <HeaderNav />
         <div className="post-container">
           <div>
-            <Sidebar />
+            <Sidebar post={allPost} />
           </div>
           <div className="post-container-col-2">
             {/* {allPost.loading && (

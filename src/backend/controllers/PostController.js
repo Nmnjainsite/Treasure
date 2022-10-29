@@ -80,7 +80,7 @@ export const createPostHandler = function (schema, request) {
     const { postData } = JSON.parse(request.requestBody);
     const post = {
       _id: uuid(),
-      content: postData,
+      ...postData,
       likes: {
         likeCount: 0,
         likedBy: [],

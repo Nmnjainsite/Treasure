@@ -16,7 +16,8 @@ export default function Dialogs({ post }) {
   const [open, setOpen] = React.useState(false);
 
   const [editItem, setEditItem] = React.useState(post.content);
-  const newPost = { ...post, content: editItem };
+  const [editImg, setEditImg] = React.useState(post.pic);
+  const newPost = { ...post, content: editItem, pic: editImg };
   const { token } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
@@ -40,8 +41,15 @@ export default function Dialogs({ post }) {
         <DialogTitle>Edit Post</DialogTitle>
         <DialogContent>
           <TextField
+            type="file"
+            fullWidth
+            onChange={(e) => setEditImg(URL.createObjectURL(e.target.files[0]))}
+          />
+
+          <TextField
             type="text"
             fullWidth
+            sx={{ mt: 3 }}
             variant="standard"
             onChange={(e) => setEditItem(e.target.value)}
             value={editItem}

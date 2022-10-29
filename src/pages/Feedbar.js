@@ -81,10 +81,15 @@ const Feedbar = ({ post }) => {
       <div>
         <div className="post-box-col-2">
           {!loginUserPost && (
-            <img src={post.img} alt="" className="post-img"></img>
+            <img src={post.pic} alt="" className="post-img"></img>
           )}
           {loginUserPost && (
-            <img src={Profile} alt="" className="post-img"></img>
+            <img
+              src={Profile}
+              alt=""
+              className="post-img"
+              onClick={() => navigate(`/user/${foundUser._id}`)}
+            ></img>
           )}
 
           <span className="post-username">{post.username}</span>
@@ -93,6 +98,18 @@ const Feedbar = ({ post }) => {
           </span>
           <span className="post-date">{finalDate}</span>
           <p style={{ fontSize: "1.2rem", color: "grey" }}>{post.content}</p>
+          {loginUserPost && (
+            <img
+              alt=""
+              src={post.pic}
+              style={{
+                width: "50%",
+                padding: "1rem",
+                marginLeft: "20%",
+                borderRadius: "0.5rem",
+              }}
+            ></img>
+          )}
 
           <div>
             <span className="post-icons">

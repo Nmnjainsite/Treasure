@@ -116,3 +116,19 @@ export const unfollowingUser = createAsyncThunk(
     }
   }
 );
+
+export const editProfile = createAsyncThunk(
+  "/user/editProfile",
+  async ({ userData, token }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post(
+        `/api/users/edit`,
+        { userData: userData },
+        { headers: { authorization: token } }
+      );
+      return response.data.users;
+    } catch (error) {
+      return rejectWithValue(`Error from editing profile:${error.message}`);
+    }
+  }
+);

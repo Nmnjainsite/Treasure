@@ -8,7 +8,7 @@ import { formatDate } from "../utils/authUtils";
 export const posts = [
   {
     _id: "dsf4sda6f65das4f",
-    img: "	https://img.freepik.com/free-vector/gradient-anime-girl-illustration_52683-83754.jpg?w=2000",
+    pic: "	https://img.freepik.com/free-vector/gradient-anime-girl-illustration_52683-83754.jpg?w=2000",
     content:
       "Hey,everyone it's been a while since I posted...Now i will be consistent.",
     likes: {
@@ -43,7 +43,7 @@ export const posts = [
   },
   {
     _id: uuid(),
-    img: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
+    pic: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
     content: "Attack On Titan Releasing Today !! Are you guys excited?",
     likes: {
       likeCount: 56,
@@ -78,7 +78,7 @@ export const posts = [
 
   {
     _id: uuid(),
-    img: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
+    pic: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
     content: "Hey Guys Whatsup !",
     likes: {
       likeCount: 4999,

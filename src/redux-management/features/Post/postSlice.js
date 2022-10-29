@@ -140,6 +140,7 @@ const postSlice = createSlice({
     [createPost.rejected]: (state) => {
       state.status = false;
     },
+
     [editPost.pending]: (state) => {
       state.status = true;
     },

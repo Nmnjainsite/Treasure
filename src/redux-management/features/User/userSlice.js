@@ -7,6 +7,7 @@ import {
   getAllUser,
   followingUser,
   unfollowingUser,
+  editProfile,
 } from "./userServices";
 
 const initialState = {
@@ -108,6 +109,16 @@ const userSlice = createSlice({
     },
 
     [unfollowingUser.rejected]: (state) => {
+      state.loading = false;
+    },
+    [editProfile.pending]: (state) => {
+      state.loading = true;
+    },
+    [editProfile.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.allUser = action.payload;
+    },
+    [editProfile.rejected]: (state) => {
       state.loading = false;
     },
   },

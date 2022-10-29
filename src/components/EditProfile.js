@@ -2,6 +2,10 @@ import * as React from "react";
 import { Box, TextField, Modal } from "@mui/material";
 import { Button } from "@mui/material";
 import { ModeEditOutlineOutlined } from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { editProfile } from "../redux-management/features/User/userServices";
+import { toast } from "react-toastify";
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,7 +25,14 @@ function EditProfile({ details, setDetails, user }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  // const { token } = useSelector((store) => store.user);
+  // const dispatch = useDispatch();
+  // const [pic, setPic] = useState(user.pic);
+  // const newItem = { ...user, pic: pic };
+  // const editProfileHandler = () => {
+  //   dispatch(editProfile({ token, userData: newItem }));
+  //   toast.success("Updated");
+  // };
   return (
     <div>
       <ModeEditOutlineOutlined
@@ -78,6 +89,11 @@ function EditProfile({ details, setDetails, user }) {
               }))
             }
           />
+          {/* <input
+            type="file"
+            onChange={(e) => setPic(URL.createObjectURL(e.target.files[0]))}
+          /> */}
+
           <TextField
             id="standard-multiline-static"
             label="About Me"
@@ -92,6 +108,7 @@ function EditProfile({ details, setDetails, user }) {
               }))
             }
           />
+
           <Button
             sx={{ display: "block", marginTop: "1rem" }}
             open={open}
@@ -101,6 +118,7 @@ function EditProfile({ details, setDetails, user }) {
           >
             Save
           </Button>
+          {/* <button onClick={editProfileHandler}>Upload</button> */}
         </Box>
       </Modal>
     </div>

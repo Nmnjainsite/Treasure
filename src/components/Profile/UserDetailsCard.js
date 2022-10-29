@@ -3,10 +3,12 @@ import HeaderNav from "../Nav/HeaderNav";
 import "./UserCard.css";
 import { EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
 import Footer from "../Footer/Footer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import EditProfile from "../EditProfile";
 import Profile from "../../assets/Profile.jpeg";
 import { ProfileTabs } from "./ProfileTabs";
+import { editProfile } from "../../redux-management/features/User/userServices";
+import { toast } from "react-toastify";
 const UserDetailsCard = ({ userId }) => {
   const [details, setDetails] = useState({
     profession: "Web Developer",
@@ -15,7 +17,8 @@ const UserDetailsCard = ({ userId }) => {
     contact: 9893663203,
     email: "jnaman475@gmail.com",
   });
-  const { foundUser, allUser } = useSelector((store) => store.user);
+
+  const { foundUser, allUser, token } = useSelector((store) => store.user);
   const { allPost } = useSelector((store) => store.post);
   const user = allUser.find((el) => el._id === userId);
   const userPost = allPost.filter((el) => el.username === user.username);
@@ -36,7 +39,7 @@ const UserDetailsCard = ({ userId }) => {
           </div>
           <div className="usercard-typo">
             {userId !== foundUser._id && (
-              <img src={user.pic} alt="" className="usercard-profile-img"></img>
+              <img src={Profile} alt="" className="usercard-profile-img"></img>
             )}
 
             {userId === foundUser._id && (
@@ -46,6 +49,7 @@ const UserDetailsCard = ({ userId }) => {
                 className="usercard-profile-img"
               ></img>
             )}
+
             <div className="usercard-typo-2">
               <li className="usercard-name">
                 {user.firstName} {user.lastName}
@@ -64,22 +68,18 @@ const UserDetailsCard = ({ userId }) => {
               </li>
             </div>
           </div>
-          <div className="usercard-typo-follow">
-            {userId === foundUser._id && (
-              <span>{foundUser.following.length}</span>
-            )}
-            <span>
-              {userId !== foundUser._id && (
-                <span> {user.following.length}</span>
-              )}
-            </span>
-            <span>{userPost.length}</span>
-            <span>{user.followers.length}</span>
-          </div>
           <div className="usercard-typo-col-3">
-            <span>Followings</span>
-            <span> Posts </span>
-            <span>Followers</span>
+            <span>
+              {userId === foundUser._id && (
+                <span>{foundUser.following.length} </span>
+              )}
+              {userId !== foundUser._id && (
+                <span>{user.following.length} </span>
+              )}
+              Followings
+            </span>
+            <span>{userPost.length} Posts </span>
+            <span> {user.followers.length} Follower</span>
           </div>
           <p className="usercard-typo-col-4">
             <span
