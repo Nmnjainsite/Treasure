@@ -18,12 +18,13 @@ const PlainNav = () => {
           display: "flex",
           width: "100%",
           borderBottom: "1px solid  #e5e5e5",
+          bgcolor: "#38bdf8",
         }}
       >
         <Typography
           variant="h6"
           sx={{
-            color: "#38bdf8",
+            color: "white",
             fontFamily: `'Pacifico', cursive;`,
             fontSize: 43,
             fontWeight: "bold",
@@ -32,13 +33,6 @@ const PlainNav = () => {
         >
           Treasure
         </Typography>
-
-        <IconButton sx={{ color: "#38bdf8" }}>
-          <AccountCircleOutlined sx={{ fontSize: 35 }} />
-        </IconButton>
-        <IconButton sx={{ color: "#38bdf8", mr: 5 }}>
-          <Login sx={{ fontSize: 35 }} />
-        </IconButton>
       </Toolbar>
     </>
   );
