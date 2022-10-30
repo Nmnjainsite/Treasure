@@ -70,4 +70,10 @@ Error 404 Page
 * Css
 * Js
 
+# Author
+[Naman Jain](https://github.com/Nmnjainsite)
+
+👨‍💻 Connect with me
+
+[Linkedin](https://www.linkedin.com/in/naman-jain-97382b231/) [Twitter](https://twitter.com/NamanJa83726591)
 
