@@ -49,3 +49,19 @@ Signup Page
 * Personal details feilds.
 
 ![signuptreasure](https://user-images.githubusercontent.com/101793920/198881305-895fc87e-6ca9-4915-bfb8-b1f20ef6a509.png)
+
+Login Page
+* Add details feilds.
+* Login user.
+* Guest login.
+
+![login](https://user-images.githubusercontent.com/101793920/198881435-a7d79704-cba7-4856-9c5a-740b6b3310fd.png)
+
+Error 404 Page
+* 404 page for unknown route.
+
+![404](https://user-images.githubusercontent.com/101793920/198881500-7cd99f4f-3e2c-4a3b-8470-72e0a7e35ec0.png)
+
+
+
+
