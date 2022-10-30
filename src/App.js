@@ -8,6 +8,7 @@ import PostView from "./pages/Post/Post";
 import UserDetails from "./components/Profile/UserDetails";
 import MockAPI from "./components/Mockman";
 import Error404 from "./pages/Error404";
+import RequireAuth from "./pages/RequiereAuth";
 
 function App() {
   return (
@@ -15,8 +16,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<PostView />} />
-        <Route path="/user/:userId" element={<UserDetails />} />
+        <Route
+          path="/home"
+          element={
+            <RequireAuth>
+              <PostView />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/user/:userId"
+          element={
+            <RequireAuth>
+              <UserDetails />
+            </RequireAuth>
+          }
+        />
         <Route path="/mockman" element={<MockAPI />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

@@ -79,7 +79,6 @@ export const getAllComments = createAsyncThunk(
   async ({ postId }, { rejectWithValue }) => {
     try {
       const response = await axios.get(`/api/comments/${postId}`);
-      console.log(response);
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(`Error from fetching comments:${error}`);
@@ -131,7 +130,6 @@ export const deleteComment = createAsyncThunk(
         },
         { headers: { authorization: token } }
       );
-      console.log(response);
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(`Error from delete comment:${error.message}`);
@@ -150,7 +148,6 @@ export const upVoteComment = createAsyncThunk(
         },
         { headers: { authorization: token } }
       );
-      console.log(response);
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(`Error from upvoting comment:${error.message}`);
@@ -169,7 +166,6 @@ export const downVoteComment = createAsyncThunk(
         },
         { headers: { authorization: token } }
       );
-      console.log(response);
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(`Error from downvoting comment:${error.message}`);
@@ -186,7 +182,6 @@ export const editPost = createAsyncThunk(
         { postData: postData },
         { headers: { authorization: token } }
       );
-      console.log(response);
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(`Error from editing post: ${error}`);

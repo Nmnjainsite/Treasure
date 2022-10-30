@@ -44,7 +44,6 @@ const Signup = () => {
           navigate("/login");
         }, 1000);
       });
-      toast.success("Signup Successfully");
     }
   };
 

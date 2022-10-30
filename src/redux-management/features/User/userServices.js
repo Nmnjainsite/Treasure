@@ -13,7 +13,6 @@ export const signupHandler = createAsyncThunk(
         password,
       });
       toast.success("Signup successfully");
-      console.log(response);
       return response.data;
     } catch (error) {
       return rejectWithValue(`Error from signup:${error.message}`);
@@ -30,7 +29,6 @@ export const loginHandler = createAsyncThunk(
         password,
       });
       toast.success("Login Successfully");
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
