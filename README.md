@@ -32,3 +32,20 @@ Profile Page
 
 ![profile](https://user-images.githubusercontent.com/101793920/198880394-b9a0544c-c3f8-4450-b209-9f9230086e98.png)
 
+Post Card
+* Edit : User can edit his post.
+* Delete: User can delete his post.
+* Like/dislike - User can like/dislike other's posts.
+* Bookmark: User can bookmarked his favorites posts.
+* Comment: User can comment to any posts.
+* Upvote/downvote: User can upvote/downvote other's comments.
+* Edit comment: user can edit his own comment
+
+![user post](https://user-images.githubusercontent.com/101793920/198880750-0676dee0-efd3-480c-8606-e1c9546065e7.png)
+
+Signup Page
+* Address details feilds.
+* Signin user.
+* Personal details feilds.
+
+![signuptreasure](https://user-images.githubusercontent.com/101793920/198881305-895fc87e-6ca9-4915-bfb8-b1f20ef6a509.png)
