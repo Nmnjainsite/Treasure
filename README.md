@@ -30,8 +30,6 @@ Profile Page
 * Posts: User can see his own posts.
 * Bookmark: User can see his bookmarked post.
 
-![profile](https://user-images.githubusercontent.com/101793920/198880394-b9a0544c-c3f8-4450-b209-9f9230086e98.png)
-
 Post Card
 * Edit : User can edit his post.
 * Delete: User can delete his post.
@@ -41,26 +39,18 @@ Post Card
 * Upvote/downvote: User can upvote/downvote other's comments.
 * Edit comment: user can edit his own comment
 
-![user post](https://user-images.githubusercontent.com/101793920/198880750-0676dee0-efd3-480c-8606-e1c9546065e7.png)
-
 Signup Page
 * Address details feilds.
 * Signin user.
 * Personal details feilds.
-
-![signuptreasure](https://user-images.githubusercontent.com/101793920/198881305-895fc87e-6ca9-4915-bfb8-b1f20ef6a509.png)
 
 Login Page
 * Add details feilds.
 * Login user.
 * Guest login.
 
-![login](https://user-images.githubusercontent.com/101793920/198881435-a7d79704-cba7-4856-9c5a-740b6b3310fd.png)
-
 Error 404 Page
 * 404 page for unknown route.
-
-![404](https://user-images.githubusercontent.com/101793920/198881500-7cd99f4f-3e2c-4a3b-8470-72e0a7e35ec0.png)
 
 # Technology
 
@@ -77,3 +67,14 @@ Error 404 Page
 
 [Linkedin](https://www.linkedin.com/in/naman-jain-97382b231/) [Twitter](https://twitter.com/NamanJa83726591)
 
+# Images
+
+![profile](https://user-images.githubusercontent.com/101793920/198880394-b9a0544c-c3f8-4450-b209-9f9230086e98.png)
+
+![user post](https://user-images.githubusercontent.com/101793920/198880750-0676dee0-efd3-480c-8606-e1c9546065e7.png)
+
+![signuptreasure](https://user-images.githubusercontent.com/101793920/198881305-895fc87e-6ca9-4915-bfb8-b1f20ef6a509.png)
+
+![login](https://user-images.githubusercontent.com/101793920/198881435-a7d79704-cba7-4856-9c5a-740b6b3310fd.png)
+
+![404](https://user-images.githubusercontent.com/101793920/198881500-7cd99f4f-3e2c-4a3b-8470-72e0a7e35ec0.png)
