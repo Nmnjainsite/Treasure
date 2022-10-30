@@ -115,7 +115,6 @@ const Feedbar = ({ post }) => {
             <span className="post-icons">
               {likeUser ? (
                 <span>
-                  {" "}
                   <ThumbUp onClick={dislikeHandler} />
                 </span>
               ) : (

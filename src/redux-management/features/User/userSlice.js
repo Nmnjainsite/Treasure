@@ -77,7 +77,7 @@ const userSlice = createSlice({
     },
     [getAllUser.fulfilled]: (state, action) => {
       state.loading = false;
-      state.allUser = action.payload;
+      state.allUser = action.payload.reverse();
     },
     [getAllUser.rejected]: (state) => {
       state.loading = false;

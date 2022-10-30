@@ -32,7 +32,7 @@ const postSlice = createSlice({
       state.status = true;
     },
     [getAllPost.fulfilled]: (state, action) => {
-      state.allPost = action.payload;
+      state.allPost = action.payload.reverse();
       state.trendingPost = action.payload;
       state.status = false;
     },
@@ -135,7 +135,7 @@ const postSlice = createSlice({
     },
     [createPost.fulfilled]: (state, action) => {
       state.status = false;
-      state.allPost = action.payload;
+      state.allPost = action.payload.reverse();
     },
     [createPost.rejected]: (state) => {
       state.status = false;

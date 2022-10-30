@@ -39,7 +39,7 @@ const UserDetailsCard = ({ userId }) => {
           </div>
           <div className="usercard-typo">
             {userId !== foundUser._id && (
-              <img src={Profile} alt="" className="usercard-profile-img"></img>
+              <img src={user.pic} alt="" className="usercard-profile-img"></img>
             )}
 
             {userId === foundUser._id && (

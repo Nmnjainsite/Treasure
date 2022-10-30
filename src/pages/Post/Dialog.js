@@ -41,6 +41,7 @@ export default function Dialogs({ post }) {
         <DialogTitle>Edit Post</DialogTitle>
         <DialogContent>
           <TextField
+            accept="image/*"
             type="file"
             fullWidth
             onChange={(e) => setEditImg(URL.createObjectURL(e.target.files[0]))}

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { createPost } from "../redux-management/features/Post/postServices";
 import { toast } from "react-toastify";
 import { IconButton } from "@mui/material";
-import { PhotoCamera } from "@mui/icons-material";
+import { PhotoAlbum, PhotoCamera } from "@mui/icons-material";
 const Sidebar = ({ user }) => {
   const { foundUser, token } = useSelector((state) => state.user);
   const { allPost } = useSelector((state) => state.post);
@@ -32,6 +32,7 @@ const Sidebar = ({ user }) => {
   const handleImage = (e) => {
     setPic(URL.createObjectURL(e.target.files[0]));
   };
+
   return (
     <div className="sidebar-box">
       <div className="img-container">
@@ -80,6 +81,7 @@ const Sidebar = ({ user }) => {
       >
         Post
       </Button>
+      {pic && <img src={pic} alt="" className="selected-img"></img>}
     </div>
   );
 };

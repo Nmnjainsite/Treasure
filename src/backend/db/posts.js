@@ -7,6 +7,38 @@ import { formatDate } from "../utils/authUtils";
 
 export const posts = [
   {
+    _id: uuid(),
+    pic: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
+    content: "Hey Guys Whatsup !",
+    likes: {
+      likeCount: 4999,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    username: "Naman Jain",
+    createdAt: formatDate(),
+    comments: [
+      {
+        _id: uuid(),
+        username: "namanjain",
+        text: "amazing",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        username: "rahulsharma",
+        text: "Great!",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+  },
+  {
     _id: "dsf4sda6f65das4f",
     pic: "	https://img.freepik.com/free-vector/gradient-anime-girl-illustration_52683-83754.jpg?w=2000",
     content:
@@ -74,38 +106,5 @@ export const posts = [
     ],
 
     updatedAt: formatDate(),
-  },
-
-  {
-    _id: uuid(),
-    pic: "https://i.pinimg.com/originals/bd/fb/dc/bdfbdc0e5c86a266c7a04c97869074ac.png",
-    content: "Hey Guys Whatsup !",
-    likes: {
-      likeCount: 4999,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    username: "Naman Jain",
-    createdAt: formatDate(),
-    comments: [
-      {
-        _id: uuid(),
-        username: "namanjain",
-        text: "amazing",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-      {
-        _id: uuid(),
-        username: "rahulsharma",
-        text: "Great!",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
   },
 ];

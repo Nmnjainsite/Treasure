@@ -29,18 +29,12 @@
   font-size: 1.5rem;
   margin-top: 1.5rem;
 }
-
-@media screen and (max-width: 900px) {
-  .sidebar-box {
-    width: 100%;
-  }
-  .sidebar-img:nth-child(2) {
-    width: 25%;
-    border-radius: 50%;
-    padding: 0rem;
-    height: 23vw;
-    margin-top: -2.5rem;
-  }
+.selected-img {
+  display: block;
+  width: 25%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-left: 35%;
 }
 
 @media screen and (max-width: 900px) {
