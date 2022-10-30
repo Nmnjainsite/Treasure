@@ -62,6 +62,12 @@ Error 404 Page
 
 ![404](https://user-images.githubusercontent.com/101793920/198881500-7cd99f4f-3e2c-4a3b-8470-72e0a7e35ec0.png)
 
+# Technology
 
+React
+Reducx toolkit
+MaterialUI
+Css
+Js
 
 
