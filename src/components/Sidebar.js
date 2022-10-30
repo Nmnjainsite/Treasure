@@ -74,6 +74,7 @@ const Sidebar = ({ user }) => {
         <input hidden accept="image/*" type="file" onChange={handleImage} />
         <PhotoCamera />
       </IconButton>
+      {/* <input type="file" onChange={handleVideo} /> */}
       <Button
         sx={{ width: "20%", mt: 2 }}
         variant="contained"
@@ -81,6 +82,12 @@ const Sidebar = ({ user }) => {
       >
         Post
       </Button>
+      {/* {video && (
+        <video controls>
+          <source src={video.video} type={video.type} />
+          Sorry, your browser doesn't support embedded video.
+        </video>
+      )} */}
       {pic && <img src={pic} alt="" className="selected-img"></img>}
     </div>
   );

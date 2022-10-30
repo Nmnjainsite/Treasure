@@ -17,7 +17,9 @@ const Following = ({ user }) => {
     dispatch(followingUser({ token, followUserId: user._id }));
     toast.success(`You started following ${user.firstName}`);
   };
+
   const findUser = foundUser.following.some((el) => el._id === user._id);
+
   const unfollowUserHandler = () => {
     dispatch(unfollowingUser({ token, followUserId: user._id }));
     toast.success(`You unfollowed ${user.firstName}`);
@@ -44,7 +46,7 @@ const Following = ({ user }) => {
           <Button
             onClick={unfollowUserHandler}
             sx={{ ml: 5, width: "60%" }}
-            variant="outlined"
+            variant="contained"
           >
             Unfollow
           </Button>
