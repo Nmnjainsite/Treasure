@@ -64,10 +64,10 @@ Error 404 Page
 
 # Technology
 
-React
-Reducx toolkit
-MaterialUI
-Css
-Js
+* React
+* Redux Toolkit
+* MaterialUI
+* Css
+* Js
 
 
