@@ -18,14 +18,13 @@ const Sidebar = ({ user }) => {
   const dispatch = useDispatch();
 
   const createPostHandler = () => {
-    if (token) {
+    if (content) {
       dispatch(createPost({ token, postData: { content, pic } }));
       toast.success("Created A New Post");
       setPic("");
       setContent("");
     } else {
-      toast.warn("Let's Login Again");
-      navigate("/");
+      toast.warn("Please fill the input fields !");
     }
   };
 
@@ -47,11 +46,22 @@ const Sidebar = ({ user }) => {
           <p>
             <span>
               {foundUser.followers.length}{" "}
-              <span style={{ margin: "0.1rem" }}>Followers</span>
+              <span style={{ margin: "0.1rem" }}>
+                {foundUser.followers.length > 1 ? (
+                  <span>Followers</span>
+                ) : (
+                  <span>Follower</span>
+                )}
+              </span>
             </span>
 
             <span style={{ margin: "0.8rem" }}>
-              {foundUser.following.length} Followings
+              {foundUser.following.length}{" "}
+              {foundUser.following.length > 1 ? (
+                <span>Followings</span>
+              ) : (
+                <span>Following</span>
+              )}
             </span>
           </p>
         </span>
@@ -74,7 +84,6 @@ const Sidebar = ({ user }) => {
         <input hidden accept="image/*" type="file" onChange={handleImage} />
         <PhotoCamera />
       </IconButton>
-      {/* <input type="file" onChange={handleVideo} /> */}
       <Button
         sx={{ width: "20%", mt: 2 }}
         variant="contained"
@@ -82,12 +91,6 @@ const Sidebar = ({ user }) => {
       >
         Post
       </Button>
-      {/* {video && (
-        <video controls>
-          <source src={video.video} type={video.type} />
-          Sorry, your browser doesn't support embedded video.
-        </video>
-      )} */}
       {pic && <img src={pic} alt="" className="selected-img"></img>}
     </div>
   );

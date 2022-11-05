@@ -8,6 +8,7 @@
 .usercard-cover-img {
   max-width: 100%;
   border-radius: 0.5rem;
+  height: 25rem;
 }
 
 .usercard-profile-img {
@@ -95,6 +96,13 @@
   width: 50%;
 }
 
+.edit-bar {
+  cursor: pointer;
+  left: 90%;
+  position: absolute;
+  top: 1rem;
+}
+
 @media screen and (max-width: 900px) {
   .usercard-container {
     left: -1rem;
@@ -102,6 +110,7 @@
   .usercard-cover-img {
     max-width: 100%;
     border-radius: 0.5rem;
+    height: 12rem;
   }
   .usercard-profile-img {
     width: 30%;
@@ -153,5 +162,10 @@
 
   .empty-img {
     margin-left: 25%;
+  }
+
+  .edit-bar {
+    cursor: pointer;
+    position: absolute;
   }
 }

@@ -3,12 +3,10 @@ import HeaderNav from "../Nav/HeaderNav";
 import "./UserCard.css";
 import { EmailOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
 import Footer from "../Footer/Footer";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import EditProfile from "../EditProfile";
 import Profile from "../../assets/Profile.jpeg";
 import { ProfileTabs } from "./ProfileTabs";
-import { editProfile } from "../../redux-management/features/User/userServices";
-import { toast } from "react-toastify";
 const UserDetailsCard = ({ userId }) => {
   const [details, setDetails] = useState({
     profession: "Web Developer",
@@ -18,7 +16,7 @@ const UserDetailsCard = ({ userId }) => {
     email: "jnaman475@gmail.com",
   });
 
-  const { foundUser, allUser, token } = useSelector((store) => store.user);
+  const { foundUser, allUser } = useSelector((store) => store.user);
   const { allPost } = useSelector((store) => store.post);
   const user = allUser.find((el) => el._id === userId);
   const userPost = allPost.filter((el) => el.username === user.username);

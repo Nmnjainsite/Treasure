@@ -18,13 +18,12 @@ const Comment = ({ post }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const postComment = () => {
-    if (token) {
+    if (commentText) {
       dispatch(addComments({ postId: post._id, token, postData: commentText }));
       setCommentText("");
-      toast.success("Posted Comment");
+      toast.success("Comment posted !");
     } else {
-      toast.error("Please Login Again");
-      navigate("/");
+      toast.warn("Please put a comment !");
     }
   };
   const editCommentToPost = () => {

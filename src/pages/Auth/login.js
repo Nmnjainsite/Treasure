@@ -98,10 +98,10 @@ const Login = () => {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign Up
+                Login
               </Button>
               <Button fullWidth variant="contained" onClick={guestLogin}>
-                Sign Up as guest
+                Login as guest
               </Button>
             </Box>
           </Box>
